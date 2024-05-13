@@ -58,9 +58,6 @@ public class AdaugaProiecteTeste extends BaseSteps {
         proiecte.deruleazaLaUltimulRand();
         int nrRanduriDupaStergere= proiecte.numarRanduriTabel();
         Assert.assertTrue(nrRanduriInit>nrRanduriDupaStergere,"Ultimul rand nu s-a sters");
-
-
-
     }
 
 }

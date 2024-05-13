@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
 
@@ -50,15 +51,11 @@ public class BaseSteps {
     }
 
     @AfterMethod
-    public void recordFailure(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
+    public void recordFailure(ITestResult result) throws IOException{
+        if (result.getStatus()==ITestResult.FAILURE&&driver instanceof TakesScreenshot) {
             TakesScreenshot camera = (TakesScreenshot)driver;
             File screenshot = camera.getScreenshotAs(OutputType.FILE);
-            try {
-                Files.move(screenshot.toPath(), new File("Screenshots/"+ result.getName()+ ".png").toPath());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Files.move(screenshot.toPath(), new File(".idea/Screenshots/"+ result.getName()+ ".png").toPath());
         }
     }
 
