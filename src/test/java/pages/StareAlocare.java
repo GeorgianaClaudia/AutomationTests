@@ -19,7 +19,7 @@ public class StareAlocare {
      wait=new WebDriverWait(driver, Duration.ofSeconds(10));
  }
  //Locators
- private By txtNumeStare = By.id("NumeStareAlocare");
+    private By txtNumeStare = By.id("NumeStareAlocare");
     private By btnSalveaza=By.xpath("//button[@class='btn btn-dark' and text()='Salveaza']");
     private By btnLista= By.xpath("//a[@class='btn btn-primary' and text()='Lista']");
     private By msgSucces=By.xpath("//div[@class='form-group' and contains(text(), 'Adaugat cu succes!')]");

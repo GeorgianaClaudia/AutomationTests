@@ -40,4 +40,11 @@ public class HomePage {
         return new StareAlocare(driver);
     }
 
+    public AlocareProiecte clickAlocareProiecte(){
+        WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement tableElement = wait.until(ExpectedConditions.visibilityOfElementLocated(table));
+        driver.findElement(By.xpath("//a[@href='/Alocare/Add']")).click();
+        return  new AlocareProiecte(driver);
+    }
+
 }
