@@ -35,7 +35,7 @@ public class AlocareProiecteTeste extends BaseSteps {
         Thread.sleep(1000);
         Assert.assertTrue(alocareProiecte.esteBtnAdaugaAlocareVizibil(), "Nu s-a comutat pe pagina");
 
-        //
+        //modificare alocare
         Thread.sleep(2000);
         alocareProiecte.deruleazaLaUltimulRand();
         String descriereInit=alocareProiecte.obtineUltimaDescriereProiect();

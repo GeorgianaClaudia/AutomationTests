@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Parallel Test Suite" parallel="classes">
-    <packages>
-        <package name="testPages"/>
-    </packages>
+<suite name="Parallel Testing" parallel="classes">
+    <test name="Parallel tests">
+        <classes>
+            <class name="testPages.TestAdaugaProiect"/>
+            <class name="testPages.AngajatiTeste"/>
+            <class name="testPages.StareAlocareTeste"/>
+            <class name="testPages.AlocareProiecteTeste"/>
+        </classes>
+    </test>
 </suite>

@@ -16,6 +16,7 @@ public class TestAdaugaProiect extends BaseSteps {
         Thread.sleep(1000);
         Assert.assertTrue(adaugaProiecte.esteSuccesMsgVizibil(),"Salvarea nu s-a efectuat");
         Thread.sleep(1000);
+        //scenariu date incomplete
         adaugaProiecte.adaugaNumeProiect();
         adaugaProiecte.clickSalveaza();
         Thread.sleep(1000);
@@ -25,6 +26,7 @@ public class TestAdaugaProiect extends BaseSteps {
         Thread.sleep(1000);
         Assert.assertTrue(adaugaProiecte.esteBtnAdaugaProiecteVizibil(),"Comutare pe noua pagina esuata");
         Thread.sleep(1000);
+        //scenariu editare/modificare date
         adaugaProiecte.deruleazaLaUltimulRand();
         String initNume= adaugaProiecte.obtineUltimulNumeProiect();
         String initDescriere= adaugaProiecte.obtineUltimaDescriereProiect();
@@ -41,6 +43,7 @@ public class TestAdaugaProiect extends BaseSteps {
         Assert.assertNotEquals(initNume,dupaNume,"modificarile nu s-au salvat!");
         Assert.assertNotEquals(initDescriere,dupaDescriere,"Modificarile privind descrierea nu s-a salvat");
         Thread.sleep(1000);
+        //scenariu stergere proiect
         int initRanduri=adaugaProiecte.numarRanduriTabel();
         adaugaProiecte.clickUltimulBtnSterge();
         Thread.sleep(1000);
